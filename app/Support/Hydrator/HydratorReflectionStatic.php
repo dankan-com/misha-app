@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace App\Support\Hydrator;
 
+use Illuminate\Contracts\Support\Arrayable;
 use JetBrains\PhpStorm\Pure;
 
-abstract class HydratorReflectionStatic implements Contracts\HydrateStatic
+abstract class HydratorReflectionStatic implements Contracts\HydrateStatic, Arrayable
 {
     final public function __construct()
     {

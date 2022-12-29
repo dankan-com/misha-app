@@ -19,4 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('plans', PlanController::class);
+Route::apiResource('plans', PlanController::class)->only(['index', 'store']);
+Route::group(['prefix' => 'plans'], function () {
+    Route::get('/{date}', [PlanController::class, 'show']);
+    Route::delete('/{date}', [PlanController::class, 'destroy']);
+    Route::put('/{day}', [PlanController::class, 'update']);
+});

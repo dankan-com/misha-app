@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Services\Plan;
+namespace App\Modules\Plan\UseCase;
 use App\Models\Plan;
 
 class Repository
@@ -23,5 +23,15 @@ class Repository
     public function store(array $data): Plan
     {
         return Plan::create($data);
+    }
+
+    public function destroy(Plan $model): void
+    {
+        $model->delete();
+    }
+    public function update(Plan $model): Plan
+    {
+        $model->save();
+        return $model;
     }
 }

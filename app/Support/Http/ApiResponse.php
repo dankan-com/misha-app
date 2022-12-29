@@ -3,8 +3,8 @@ declare(strict_types=1);
 
 namespace App\Support\Http;
 
+use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Response;
 
 class ApiResponse
@@ -12,7 +12,7 @@ class ApiResponse
     public function __construct(
         protected int $code = 200,
         protected ?string $message = null,
-        protected ?array $data = null,
+        protected ?Arrayable $data = null,
     ) {
     }
 
@@ -36,7 +36,7 @@ class ApiResponse
         return new self(Response::HTTP_CREATED, null, $data);
     }
 
-    public static function successData(array $data): self
+    public static function successData(Arrayable $data): self
     {
         return new self(Response::HTTP_OK, null, $data);
     }

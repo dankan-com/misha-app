@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Services\Plan\Dto;
+namespace App\Modules\Plan\ReadModel\Dto;
 
 use App\Support\Hydrator\HydratorFlatStatic;
 

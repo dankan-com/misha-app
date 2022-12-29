@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Services\Plan\UseCase\Store;
+namespace App\Modules\Plan\ReadModel\Dto;
 
 use App\Support\Hydrator\Attributes\Collection;
 use App\Support\Hydrator\HydratorReflectionStatic;
-use App\Services\Plan\Dto\PClass;
 
-class Command extends HydratorReflectionStatic
+class Item extends HydratorReflectionStatic
 {
+    public int $id;
     public string $day;
     #[Collection(PClass::class)]
     public array $classes;

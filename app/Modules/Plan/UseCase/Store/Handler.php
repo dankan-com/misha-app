@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Services\Plan\UseCase\Store;
+namespace App\Modules\Plan\UseCase\Store;
 
-use App\Services\Plan\UseCase\AbstractHandler;
+use App\Modules\Plan\UseCase\AbstractHandler;
 
 class Handler extends AbstractHandler
 {
